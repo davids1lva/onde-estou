@@ -2,8 +2,8 @@
 <html lang="pt">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#111b28">
-  <title>Onde Estou? â jogo de panoramas 360Â°</title>
-  <meta name="description" content="Explora fotografias panorÃ¢micas 360Â°, marca a rua num mapa real e descobre quantos pontos consegues fazer.">
+  <title>Onde Estou? — jogo de panoramas 360°</title>
+  <meta name="description" content="Explora fotografias panorâmicas 360°, marca a rua num mapa real e descobre quantos pontos consegues fazer.">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111b28'/%3E%3Cpath d='M32 8a20 20 0 0 0-20 20c0 15 20 29 20 29s20-14 20-29A20 20 0 0 0 32 8Z' fill='%23f5b74c'/%3E%3Ccircle cx='32' cy='28' r='8' fill='%23111b28'/%3E%3C/svg%3E">
   <style>
@@ -37,15 +37,15 @@
 </head>
 <body>
 <div class="app">
-  <header><div class="logo"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2C8.3 2 3 7.5 3 14.5S10 31 16 31s13-9 13-16.5S23.7 2 16 2Zm0 18a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11Z"/></svg>ONDE ESTOU?</div><div class="middle"><span class="pill" id="round">Ronda 1 / 4</span><div class="progress" id="progress" aria-label="Progresso da partida"></div></div><span class="score" id="score">0 pontos</span><button class="quiet" id="reset" title="RecomeÃ§ar partida">RecomeÃ§ar</button></header>
+  <header><div class="logo"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2C8.3 2 3 7.5 3 14.5S10 31 16 31s13-9 13-16.5S23.7 2 16 2Zm0 18a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11Z"/></svg>ONDE ESTOU?</div><div class="middle"><span class="pill" id="round">Ronda 1 / 4</span><div class="progress" id="progress" aria-label="Progresso da partida"></div></div><span class="score" id="score">0 pontos</span><button class="quiet" id="reset" title="Recomeçar partida">Recomeçar</button></header>
   <main>
-    <div class="scene" id="scene" aria-label="Fotografia panorÃ¢mica 360 graus. Arrasta para rodar a vista."><img id="panorama" alt="Panorama do local misterioso"><img id="panoramaCopy" alt="" aria-hidden="true"><div class="scene-loading" id="loading">A carregar panorama 360Â°â¦</div><div class="scene-fail" id="fail"><p>NÃ£o foi possÃ­vel carregar esta fotografia. Tenta avanÃ§ar ou recarregar a pÃ¡gina.</p></div></div>
-    <div class="tip" id="tip"><strong>Onde estÃ¡s?</strong> Roda a fotografia 360Â° e marca a rua no mapa.</div>
-    <div class="view-actions"><button id="left" aria-label="Rodar para a esquerda">â¹</button><button id="right" aria-label="Rodar para a direita">âº</button></div>
-    <div class="map-panel" id="mapPanel"><div class="map-header"><span id="mapTitle">Escolhe o local no mapa</span><button id="expand" aria-label="Expandir mapa">â¤¢</button></div><div class="map-view" id="mapView" aria-label="Mapa interativo para marcar a resposta"></div><div class="map-footer"><small id="mapHint">Aproxima o mapa atÃ© Ã  rua e clica onde achas que estÃ¡s.</small><button class="primary" id="confirm" disabled>Confirmar resposta</button></div></div>
-    <div class="result" id="result" role="status"><div><h2 id="resultTitle"></h2><p id="distance"></p></div><div class="points" id="roundPoints"></div><button class="primary" id="next">PrÃ³xima ronda</button></div>
-    <div class="overlay" id="summary" hidden><div class="card"><div class="globe">ð</div><h1>Partida concluÃ­da!</h1><p>Quatro lugares, quatro tentativas.</p><div class="total" id="total"></div><div>de 20 000 pontos</div><div class="round-list" id="roundList"></div><button class="primary" id="again">Jogar novamente</button></div></div>
-  </main><footer>Fotografias 360Â°: <a href="https://commons.wikimedia.org/wiki/Category:360%C2%B0_panoramas" target="_blank" rel="noopener">Wikimedia Commons</a> Â· <a id="photoCredit" href="#" target="_blank" rel="noopener">Fonte desta ronda</a> Â· Mapa: Â© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></footer>
+    <div class="scene" id="scene" aria-label="Fotografia panorâmica 360 graus. Arrasta para rodar a vista."><img id="panorama" alt="Panorama do local misterioso"><img id="panoramaCopy" alt="" aria-hidden="true"><div class="scene-loading" id="loading">A carregar panorama 360°…</div><div class="scene-fail" id="fail"><p>Não foi possível carregar esta fotografia. Tenta avançar ou recarregar a página.</p></div></div>
+    <div class="tip" id="tip"><strong>Onde estás?</strong> Roda a fotografia 360° e marca a rua no mapa.</div>
+    <div class="view-actions"><button id="left" aria-label="Rodar para a esquerda">‹</button><button id="right" aria-label="Rodar para a direita">›</button></div>
+    <div class="map-panel" id="mapPanel"><div class="map-header"><span id="mapTitle">Escolhe o local no mapa</span><button id="expand" aria-label="Expandir mapa">⤢</button></div><div class="map-view" id="mapView" aria-label="Mapa interativo para marcar a resposta"></div><div class="map-footer"><small id="mapHint">Aproxima o mapa até à rua e clica onde achas que estás.</small><button class="primary" id="confirm" disabled>Confirmar resposta</button></div></div>
+    <div class="result" id="result" role="status"><div><h2 id="resultTitle"></h2><p id="distance"></p></div><div class="points" id="roundPoints"></div><button class="primary" id="next">Próxima ronda</button></div>
+    <div class="overlay" id="summary" hidden><div class="card"><div class="globe">🌍</div><h1>Partida concluída!</h1><p>Quatro lugares, quatro tentativas.</p><div class="total" id="total"></div><div>de 20 000 pontos</div><div class="round-list" id="roundList"></div><button class="primary" id="again">Jogar novamente</button></div></div>
+  </main><footer>Fotografias 360°: <a href="https://commons.wikimedia.org/wiki/Category:360%C2%B0_panoramas" target="_blank" rel="noopener">Wikimedia Commons</a> · <a id="photoCredit" href="#" target="_blank" rel="noopener">Fonte desta ronda</a> · Mapa: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></footer>
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="game.js"></script>
